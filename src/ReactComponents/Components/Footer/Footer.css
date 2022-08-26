@@ -1,0 +1,34 @@
+.footer {
+  
+  display: flex;
+  justify-content: flex-end;
+  background-color: #6c8312;
+}
+.footer-main {
+  display: flex;
+  width: 90vw;
+  align-items: center;
+}
+.footer-text {
+  margin: 1rem auto;
+  color: black;
+}
+.footer-logo {
+  height: 14vh;
+  margin: 0;
+  -webkit-filter: brightness(150%) contrast(130%);
+  filter: brightness(150%);;
+
+}
+
+@media (max-width: 930px) {
+  .footer-main {
+    width: 100%;
+    height: 10rem;
+    margin-top: auto;
+  }
+  .footer-logo {
+  height: 24vh;
+
+}
+}
