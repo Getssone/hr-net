@@ -1,37 +1,35 @@
 Form {
-  width: 25%;
+  width: 50vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: auto auto 3rem auto;
-  border: 1rem ridge #444444;
+  border: 0.25rem solid #c2c27d;
+  box-shadow: 14px 13px 15px 3px #000;
   border-radius: 1rem;
   padding: 0.5rem 2rem 2rem 2rem;
   background-color: #c2c27da9;
 }
-.form-description {
-  color: #444444;
-  font-size: 1.5rem;
+.forget {
+  margin: 0.5rem;
+  text-align: center;
+  color: forestgreen;
   font-weight: bold;
-  background-color: #d5db99;
-  border: 0.5rem ridge #d5db99;
+}
+
+.form-description {
+  color: #363434;
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-weight: bold;
 }
 
 .label {
-  width: 85%;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   margin: auto;
   padding-bottom: 0.3rem;
-}
-
-.label input {
-  height: 1.5rem;
-}
-.label select {
-  height: 2.4rem;
-  background-color: #d1d8b1;
-  font-weight: bold;
-  border-radius: 0.2rem;
 }
 
 .label p {
@@ -39,121 +37,94 @@ Form {
   text-align: left;
   color: black;
 }
-.adress {
-  width: 85%;
-  border: solid 2px #6c8312;
-  border-radius: 0.4rem;
-  padding: 0.2rem 0.2rem 4rem 0.2rem;
-  margin: 1.5rem auto;
-  height: 14rem;
-  position: relative;
+
+.label input {
+  height: 2rem;
+  border-radius: 23px;
+  border: 1px;
 }
 
-.label-zipcode {
-  position: absolute;
-  width: 84%;
-  bottom: 0.3rem;
-  margin: auto;
-  padding-left: 1.4rem;
+.label select {
+  height: 2rem;
+  background-color: #d1d8b1;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  border-radius: 23px;
+  border: 1.5px solid #94b020;
+}
+
+.adress {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  height: 15rem;
+  border: solid 2px #93b117;
+  background-color: #92b11734;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.2rem 4rem 0.2rem;
+  margin: 1.5rem 3rem;
 }
 
 .submit {
-  width: 5rem;
-  height: 2rem;
-  margin: 1rem auto 0;
   background-color: #444444;
   color: white;
-  border-radius: 0.5rem;
-  padding-bottom: 1.6rem;
-  padding-top: 0.6rem;
+  margin: 2rem 35%;
+  text-align: center;
+  width: 10rem;
 }
 .react-datepicker-wrapper input {
   width: 100%;
 }
 
-.react-datepicker__input-container button::after {
-  background-color: #444444;
+.react-datepicker__current-month {
+  color: black;
+  text-decoration: underline;
+  font-weight: bolder;
 }
-.react-datepicker__current-month,
-.react-datepicker {
-  color: #444444;
-}
-.react-datepicker {
-  background-color: #99aa55;
-}
-.react-datepicker__day--keyboard-selected,
-.react-datepicker__month-text--keyboard-selected,
-.react-datepicker__quarter-text--keyboard-selected,
-.react-datepicker__year-text--keyboard-selected,
-.react-datepicker__day--selected,
-.react-datepicker__day--in-selecting-range,
-.react-datepicker__day--in-range,
-.react-datepicker__month-text--selected,
-.react-datepicker__month-text--in-selecting-range,
-.react-datepicker__month-text--in-range,
-.react-datepicker__quarter-text--selected,
-.react-datepicker__quarter-text--in-selecting-range,
-.react-datepicker__quarter-text--in-range,
-.react-datepicker__year-text--selected,
-.react-datepicker__year-text--in-selecting-range,
-.react-datepicker__year-text--in-range {
-  background-color: #b8c976;
-}
+
 .react-datepicker__day--today,
 .react-datepicker__month-text--today,
 .react-datepicker__quarter-text--today,
 .react-datepicker__year-text--today {
   font-weight: bolder;
-  color: #b8c976;
+  color: black;
+  text-decoration: underline;
   background-color: #44444456;
 }
 
 @media (max-width: 1025px) {
   Form {
-    width: 40%;
+    width: 66vw;
   }
-  .label input {
-    height: 2rem;
+  .label {
+    width: 20rem;
   }
+
   .label select {
     height: 2.8rem;
   }
   .adress {
-    height: 18rem;
-  }
-  .submit {
-    width: 7rem;
-    height: 3rem;
+    width: 23rem;
   }
   .react-datepicker-wrapper input {
-    width: 97%;
     height: 2.5rem;
   }
 }
+
 @media (max-width: 800px) {
   Form {
-    width: 60%;
+    width: 60vw;
   }
-  .label input {
-    height: 2rem;
-  }
+
   .label select {
     height: 2.8rem;
   }
-  .adress {
-    height: 18rem;
-  }
-  .submit {
-    width: 7rem;
-    height: 3rem;
-  }
+
   .react-datepicker-wrapper input {
     width: 97%;
     height: 2.5rem;
   }
-}
-@media (max-width: 600px) {
-  .sc-gsDKAQ.kmLHwK {
-    width: 12rem;
+  .submit {
+    margin: 2rem 26%;
   }
 }

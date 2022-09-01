@@ -1,32 +1,33 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useRef, useCallback } from "react";
+import {useCallback } from "react";
 
-export default function MyDatePicker({
+import "../Form.css";
+
+export default function FormDatePicker({
   selected,
   setDate,
   setValueDate,
   placeholder,
   labelTitle,
 }) {
-  const labelContentRef = useRef(null);
   const onClickLabel = useCallback((event) => {
-    if (event.nativeEvent.target !== labelContentRef.current) {
       event.preventDefault();
-    }
   }, []);
 
   return (
     <label className="label" onClick={onClickLabel}>
-      <p ref={labelContentRef}>{labelTitle}</p>
+      <p>{labelTitle}</p>
       <DatePicker
         required
         selected={selected}
         onChange={(date) => {
-          setValueDate(date);
           setDate(date);
+          setValueDate(date);
         }}
         dateFormat="dd/MM/yyyy"
+        todayButton="Today"
+        dropdownMode="select"
         isClearable
         placeholderText={placeholder}
         fixedHeight
@@ -34,9 +35,9 @@ export default function MyDatePicker({
         showMonthDropdown
         useShortMonthInDropdown
         showYearDropdown
-        dropdownMode="select"
-        todayButton="Today"
-      />
+        >
+        <div className="forget"> Don't forget YOU are the Best! 😉</div>
+      </DatePicker>
     </label>
   );
 }

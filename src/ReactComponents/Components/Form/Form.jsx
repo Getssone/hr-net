@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "../../../Redux/Slice/employeeSlice";
-import DatePicker from "./DatePicker/MyDatePicker";
+import { add } from "../../../Redux/Slice/employeeX";
+import FormDatePicker from "./DatePicker/FormDatePicker";
 
-import dataStates from "../../../data/dataStates";
-import dataDepartments from "../../../data/dataDepartments";
+import dataStates from "../../../data/fakeDataStates";
+import dataDepartments from "../../../data/fakeDataDepartments";
 
 import "./Form.css";
 
 import Dropdown from "./Dropdown/Dropdowns";
 import Input from "./Input/Input";
-// import { Modal } from "customizable-react-modal-by-lazez";
+// import { Modal } from "React-modal-Getssone";
 
 const Form = () => {
   // const myTheme = {
@@ -24,6 +24,7 @@ const Form = () => {
   //   buttonHoverTxt: "white",
   // };
 
+  // les const "xxxtoAdd" permettent d'enregistré les valeurs une fois validé
   const [
     firstNameToAdd,
     lastNameToAdd,
@@ -45,14 +46,14 @@ const Form = () => {
     state.state,
     state.zipCode,
   ]);
-
+  // const [ valeur initial, valeur modifié] = useState( utilise le selecteur "XXX")
   const [firstName, setFirstName] = useState(firstNameToAdd);
   const [lastName, setLastName] = useState(lastNameToAdd);
   const [birthDate, setBirthDate] = useState(birthDateToAdd);
   const [startDate, setStartDate] = useState(startDateToAdd);
   const [street, setStreet] = useState(streetToAdd);
   const [city, setCity] = useState(cityToAdd);
-  const [State, setState] = useState(stateToAdd);
+  const [state, setState] = useState(stateToAdd);
   const [zipCode, setZipCode] = useState(zipCodeToAdd);
   const [department, setDepartment] = useState(departmentToAdd);
 
@@ -65,7 +66,8 @@ const Form = () => {
   // const onOpenModal = () => setOpenModal(true);
   // const onCloseModal = () => setOpenModal(false);
 
-  const dateForTable = (date) => {
+  const modaldate = (date) => {
+    // "month" commence par un index "0" donc ajouté +1 pour obtenir notre mois
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const year = date.getUTCFullYear();
@@ -75,12 +77,12 @@ const Form = () => {
   const employee = {
     firstName,
     lastName,
-    startDate: dateForTable(new Date(startDate)),
+    startDate: modaldate(new Date(startDate)),
     department,
-    birthDate: dateForTable(new Date(birthDate)),
+    birthDate: modaldate(new Date(birthDate)),
     street,
     city,
-    State,
+    state,
     zipCode,
   };
 
@@ -94,9 +96,9 @@ const Form = () => {
   };
 
   console.log(employee);
-  console.log("BIRTH", birthDate);
-  console.log("START", startDate);
-  console.log("STATE", State);
+  console.log("BIRTHDATE", birthDate);
+  console.log("STARTDATE", startDate);
+  console.log("STATE", state);
 
   return (
     <>
@@ -105,6 +107,7 @@ const Form = () => {
         <Input
           type="text"
           name="firstname"
+          className="firstname"
           labelTitle="First Name:"
           value={firstNameToAdd}
           setInput={setFirstName}
@@ -112,29 +115,33 @@ const Form = () => {
         <Input
           type="text"
           name="lastname"
+          className="lastname"
           labelTitle="Last Name:"
           value={lastNameToAdd}
           setInput={setLastName}
         />
-        <DatePicker
+        <FormDatePicker
           labelTitle="Birth Date:"
+          className="birthDate"
           selected={valueBirthDate}
-          setValueDate={setValueBirthDate}
           setDate={setBirthDate}
+          setValueDate={setValueBirthDate}
           placeholder="Select a birth date"
         />
-        <DatePicker
+
+        <FormDatePicker
           labelTitle="Start Date:"
+          className="startDate"
           selected={valueStartDate}
-          setValueDate={setValueStartDate}
           setDate={setStartDate}
+          setValueDate={setValueStartDate}
           placeholder="Select a start date"
         />
-
         <div className="adress">
           <Input
             type="text"
             name="street"
+            className="street"
             labelTitle="Street:"
             value={streetToAdd}
             setInput={setStreet}
@@ -142,6 +149,7 @@ const Form = () => {
           <Input
             type="text"
             name="city"
+            className="city"
             labelTitle="City:"
             value={cityToAdd}
             setInput={setCity}
@@ -149,7 +157,8 @@ const Form = () => {
           <Dropdown
             name="state"
             labelTitle="State:"
-            value={State}
+            className="state"
+            value={state}
             setDrop={setState}
             datas={dataStates}
           />
@@ -157,6 +166,7 @@ const Form = () => {
           <Input
             type="number"
             name="zipcode"
+            className="zipcode"
             labelTitle="Zipcode:"
             value={zipCodeToAdd}
             setInput={setZipCode}
@@ -164,17 +174,15 @@ const Form = () => {
         </div>
         <Dropdown
           name="department"
+          className="department"
           labelTitle="Department"
           value={departmentToAdd}
           setDrop={setDepartment}
           datas={dataDepartments}
         />
-        <Input
-          type="submit"
-          name="submit"
-          className="submit"
-          value="Save"
-        />
+
+        <Input type="submit" name="submit" className="submit" value="Save" />
+
       </form>
       {/* {openModal && (
         <Modal theme={myTheme} close={onCloseModal} text="Employee Created!" />

@@ -1,5 +1,4 @@
 .footer {
-  
   display: flex;
   justify-content: flex-end;
   background-color: #6c8312;
@@ -17,8 +16,7 @@
   height: 14vh;
   margin: 0;
   -webkit-filter: brightness(150%) contrast(130%);
-  filter: brightness(150%);;
-
+  filter: brightness(150%);
 }
 
 @media (max-width: 930px) {
@@ -28,7 +26,6 @@
     margin-top: auto;
   }
   .footer-logo {
-  height: 24vh;
-
-}
+    height: 8vh;
+  }
 }

@@ -1,3 +1,4 @@
+//Info createSlice => https://redux-toolkit.js.org/api/createslice/
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -13,17 +14,21 @@ const initialState = {
     zipCode: "",
   },
 };
-let employees = JSON.parse(localStorage.getItem("employees")) || [];
-localStorage.setItem("employees", JSON.stringify(employees));
-employees = JSON.parse(localStorage.getItem("employees"));
 
-const employeeSlice = createSlice({
+// si il y a des données dans "employees" récupére les si non crée un tableau
+let employees = JSON.parse(localStorage.getItem("employees")) || [];
+// Enregistre dans "employees" les donées (valeurs) javascript
+localStorage.setItem("employees", JSON.stringify(employees));
+
+// createSlice permet de crée des actions directement dans le reducer
+const employeeX = createSlice({
   name: "employee",
 
   initialState,
 
   reducers: {
     add: (state, action) => {
+      // la state suivante suite à l action auras pour valeur X
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.startDate = action.payload.startDate;
@@ -34,6 +39,7 @@ const employeeSlice = createSlice({
       state.city = action.payload.city;
       state.State = action.payload.State;
 
+      // Extraction des states remplace : const firstName = state.firstName, const lastName = state.lastName
       const {
         firstName,
         lastName,
@@ -45,6 +51,8 @@ const employeeSlice = createSlice({
         State,
         zipCode,
       } = state;
+
+      // Dans le tableau employees met les valeurs suivantes
 
       employees.push({
         firstName,
@@ -58,11 +66,13 @@ const employeeSlice = createSlice({
         zipCode,
       });
 
+      // dans le localStorage met dans employees les valeurs Javascript en string
       localStorage.setItem("employees", JSON.stringify(employees));
-      console.log("employés local", employees);
+      // affiche les dans la console
+      console.log("employees save :", employees);
     },
   },
 });
 
-export const { add } = employeeSlice.actions;
-export default employeeSlice.reducer;
+export const { add } = employeeX.actions;
+export default employeeX.reducer;
