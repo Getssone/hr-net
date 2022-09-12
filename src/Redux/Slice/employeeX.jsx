@@ -28,7 +28,7 @@ const employeeX = createSlice({
 
   reducers: {
     add: (state, action) => {
-      // la state suivante suite à l action auras pour valeur X
+      // la state suite à l action auras pour valeur X
       state.firstName = action.payload.firstName;
       state.lastName = action.payload.lastName;
       state.startDate = action.payload.startDate;
@@ -66,7 +66,7 @@ const employeeX = createSlice({
         zipCode,
       });
 
-      // dans le localStorage met dans employees les valeurs Javascript en string
+      // dans le localStorage met dans "employees" les valeurs Javascript en string
       localStorage.setItem("employees", JSON.stringify(employees));
       // affiche les dans la console
       console.log("employees save :", employees);
@@ -74,5 +74,9 @@ const employeeX = createSlice({
   },
 });
 
-export const { add } = employeeX.actions;
-export default employeeX.reducer;
+// export const { add } = employeeX.actions;
+// export default employeeX.reducer;
+// ou faire
+const { actions, reducer } = employeeX 
+export const { add } = actions; 
+export default reducer ;

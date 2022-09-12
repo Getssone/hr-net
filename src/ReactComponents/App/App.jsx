@@ -6,7 +6,7 @@ import Footer from "../Components/Footer/Footer.jsx";
 import "./App.css";
 
 const Home = lazy(() => import("../../Pages/Home/Home.jsx"));
-//const Employees = lazy(() => import("../pages/Employees/Employees"));
+const Employees = lazy(() => import("../../Pages/Employees/Employees"));
 const Error = lazy(() => import("../../Pages/Error/Error.jsx"));
 
 function App() {
@@ -14,14 +14,14 @@ function App() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Header />
-        <Banner/>
+        <Banner />
         <Routes>
           <Route index element={<Home />} />
-          {/*<Route path="employees" element={<Employees />} /> */}
+          <Route path="employees" element={<Employees />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer/>
-      </Suspense> 
+        <Footer />
+      </Suspense>
     </>
   );
 }

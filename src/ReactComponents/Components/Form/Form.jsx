@@ -11,20 +11,18 @@ import "./Form.css";
 import Dropdown from "./Dropdown/Dropdowns";
 import Input from "./Input/Input";
 // import { Modal } from "React-modal-Getssone";
+import Modal from "./../Modal/modal";
 
 const Form = () => {
-  // const myTheme = {
-  //   containerBg: "rgba(146, 146, 96, .9)",
-  //   messageBg: "#444444",
-  //   messageHoverBg: "#aebf8e",
-  //   messageHoverTxt: "black",
-  //   borderColor: "#d5db99",
-  //   buttonBg: "#d5db99",
-  //   buttonHoverBg: "#444444",
-  //   buttonHoverTxt: "white",
-  // };
 
-  // les const "xxxtoAdd" permettent d'enregistré les valeurs une fois validé
+  /**
+   * 
+   * Extraction des useSelector remplace : 
+   * //const firstNameToAdd = useSelector.state.firstName, 
+   * //const lastNameToAdd = useSelector.state.lastName
+   * // les const "xxxtoAdd" permettent d'enregistré les valeurs une fois validé
+   */
+
   const [
     firstNameToAdd,
     lastNameToAdd,
@@ -33,7 +31,7 @@ const Form = () => {
     birthDateToAdd,
     streetToAdd,
     cityToAdd,
-    stateToAdd,
+    StateToAdd,
     zipCodeToAdd,
   ] = useSelector((state) => [
     state.firstName,
@@ -53,7 +51,7 @@ const Form = () => {
   const [startDate, setStartDate] = useState(startDateToAdd);
   const [street, setStreet] = useState(streetToAdd);
   const [city, setCity] = useState(cityToAdd);
-  const [state, setState] = useState(stateToAdd);
+  const [State, setState] = useState(StateToAdd);
   const [zipCode, setZipCode] = useState(zipCodeToAdd);
   const [department, setDepartment] = useState(departmentToAdd);
 
@@ -62,9 +60,13 @@ const Form = () => {
 
   const dispatch = useDispatch();
 
-  // const [openModal, setOpenModal] = useState(false);
-  // const onOpenModal = () => setOpenModal(true);
-  // const onCloseModal = () => setOpenModal(false);
+  
+  const [openModal, setOpenModal] = useState(true);
+  const onOpenModal = () => setOpenModal(true);
+  const onCloseModal = () => setOpenModal(false);
+
+
+ 
 
   const modaldate = (date) => {
     // "month" commence par un index "0" donc ajouté +1 pour obtenir notre mois
@@ -82,7 +84,7 @@ const Form = () => {
     birthDate: modaldate(new Date(birthDate)),
     street,
     city,
-    state,
+    State,
     zipCode,
   };
 
@@ -92,13 +94,13 @@ const Form = () => {
     e.target.reset();
     setValueBirthDate(null);
     setValueStartDate(null);
-    // onOpenModal();
+    onOpenModal();
   };
 
   console.log(employee);
   console.log("BIRTHDATE", birthDate);
   console.log("STARTDATE", startDate);
-  console.log("STATE", state);
+  console.log("STATE", State);
 
   return (
     <>
@@ -111,6 +113,7 @@ const Form = () => {
           labelTitle="First Name:"
           value={firstNameToAdd}
           setInput={setFirstName}
+          required
         />
         <Input
           type="text"
@@ -119,6 +122,7 @@ const Form = () => {
           labelTitle="Last Name:"
           value={lastNameToAdd}
           setInput={setLastName}
+          required
         />
         <FormDatePicker
           labelTitle="Birth Date:"
@@ -127,6 +131,7 @@ const Form = () => {
           setDate={setBirthDate}
           setValueDate={setValueBirthDate}
           placeholder="Select a birth date"
+          required
         />
 
         <FormDatePicker
@@ -136,6 +141,7 @@ const Form = () => {
           setDate={setStartDate}
           setValueDate={setValueStartDate}
           placeholder="Select a start date"
+          required
         />
         <div className="adress">
           <Input
@@ -145,6 +151,7 @@ const Form = () => {
             labelTitle="Street:"
             value={streetToAdd}
             setInput={setStreet}
+            required
           />
           <Input
             type="text"
@@ -153,14 +160,16 @@ const Form = () => {
             labelTitle="City:"
             value={cityToAdd}
             setInput={setCity}
+            required
           />
           <Dropdown
-            name="state"
             labelTitle="State:"
+            name="state"
             className="state"
-            value={state}
+            value={State}
             setDrop={setState}
             datas={dataStates}
+            required
           />
 
           <Input
@@ -170,23 +179,26 @@ const Form = () => {
             labelTitle="Zipcode:"
             value={zipCodeToAdd}
             setInput={setZipCode}
+            required
           />
         </div>
         <Dropdown
+          labelTitle="Department"
           name="department"
           className="department"
-          labelTitle="Department"
           value={departmentToAdd}
           setDrop={setDepartment}
           datas={dataDepartments}
+          required
         />
 
         <Input type="submit" name="submit" className="submit" value="Save" />
-
       </form>
-      {/* {openModal && (
-        <Modal theme={myTheme} close={onCloseModal} text="Employee Created!" />
-      )} */}
+      {openModal && (
+        <Modal
+          texte="Employee Created! It's Me Luigi 😉✅"
+          onClick={onCloseModal}></Modal>
+      )}
     </>
   );
 };

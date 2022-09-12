@@ -1,0 +1,208 @@
+table {
+  table-layout: fixed;
+  width: 95%;
+  border-collapse: collapse;
+  border: 0.2rem ridge #444444;
+  text-align: center;
+}
+
+.table {
+  margin: 0rem 3rem !important;
+}
+.table-main{
+  margin: 0rem 2rem;
+
+}
+th,
+td {
+  color: black;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+}
+thead th {
+  padding-bottom: 0.5rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+}
+.table-title {
+  width: 20rem;
+  margin: 1rem auto;
+  text-align: center;
+  color: #444444;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #eaecce;
+  border-bottom: solid 0.05rem #9fa09b;
+}
+table tbody tr:nth-child(even) {
+  background-color: #daddc8;
+  border-bottom: solid 0.05rem #9fa09b;
+}
+
+table tbody tr:hover {
+  background-color: #b4d179;
+}
+
+table td:nth-child(3),
+table td:nth-child(4) {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.table-header-cell {
+  font-family: "Rock Salt", cursive;
+  color: #b4d179;
+  font-size: 1rem;
+  background-color: #444444;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+}
+.icon-normal-active:after {
+  content: "➡";
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.icon-inverse-active:after {
+  content: "⬅";
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.MyTable{  
+  background-color: #444444;
+  box-shadow: 14px 13px 15px 3px #000;
+  border-radius: 50px;
+}
+
+.table-utils {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.table-search {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 2.5rem;
+  background-color: #444444;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-right: 16%;
+  width: 11rem;
+}
+.table-search input {
+  width: 6rem;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: rgb(66, 79, 17);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.table-show {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 2.5rem;
+  background-color: #444444;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-left: 3%;
+}
+.table-show select {
+  padding: 0.5rem;
+  margin: auto 1rem;
+  background-color: white;
+  color: rgb(66, 79, 17);
+  font-size: 1rem;
+  font-weight: bolder;
+  border-radius: 0.5rem;
+}
+.table-show label,
+.table-search label,
+.table-show span {
+  padding: 00.5rem;
+  margin: auto 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+}
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+.pagination p {
+  font-weight: bold;
+}
+
+.number {
+  background-color: #444444;
+  border-radius: 10%;
+  color: white;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.number.number-active {
+  background: olive;
+  margin: 0.5rem;
+}
+.number.previousOrNext-disabled {
+  display: none;
+  margin: 1em;
+  padding: 0.5rem 0.5rem;
+}
+.table-footer {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+.table-footer-p {
+  margin-left: 3rem;
+  font-weight: bold;
+}
+
+.nodata {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1030px) {
+  .table-utils {
+    margin-bottom: 0rem;
+  }
+  td {
+    font-size: 0.7rem;
+  }
+  .table-header-cell {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 950px) {
+  .table-header-cell {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 750px) {
+  .table-header-cell {
+    font-size: 0.55rem;
+  }
+}
+@media (max-width: 660px) {
+  .table-header-cell {
+    font-size: 0.4rem;
+  }
+  td {
+    font-size: 0.5rem;
+  }
+}
