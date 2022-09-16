@@ -1,5 +1,5 @@
 import "./Footer.css";
-import logo from "../../../assets/WealthHealth.png";
+import logo from "../../../assets/FooterWealthHealth.png";
 
 export default function Footer() {
   return (

@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "immer": "^9.0.15",
+    "package-modal-p14": "^1.1.11",
+    "package-modal-p14-v2": "^1.1.19",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-datepicker": "^4.8.0",

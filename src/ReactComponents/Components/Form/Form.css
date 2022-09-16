@@ -41,6 +41,7 @@ Form {
 
 .label input {
   height: 2rem;
+  padding-left: 0.5rem;
   border-radius: 23px;
   border: 1px;
 }
@@ -128,4 +129,17 @@ Form {
   .submit {
     margin: 2rem 26%;
   }
+}
+
+@media (max-width: 600px) {
+
+  .label {
+    width: 12rem;
+  }
+  .adress{
+    width: 15rem;
+  }
+  .submit {
+    margin: 2rem 10%;
+}
 }

@@ -1,11 +1,12 @@
 import ModalContainer from "./ModalContainer.jsx";
 
-import "./modaltest.css";
+import "./modal.css";
 
-export default function Modal({onCloseModal}) {
+export default function Modal({ texte, close }) {
+
   return (
     <>
-      <ModalContainer onClick={onCloseModal}/>
+      <ModalContainer texte={texte} close={close} />
     </>
   );
 }

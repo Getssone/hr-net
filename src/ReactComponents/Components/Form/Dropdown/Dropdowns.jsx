@@ -22,7 +22,7 @@ export default function Dropdown({ labelTitle, name, className, value, setDrop, 
 Dropdown.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
-  setDrop: PropTypes.func,
-  datas: PropTypes.array,
+  setDrop: PropTypes.func.isRequired,
+  datas: PropTypes.array.isRequired,
   labelTitle: PropTypes.string.isRequired,
 };

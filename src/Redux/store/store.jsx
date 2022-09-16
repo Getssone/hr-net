@@ -1,4 +1,4 @@
-import employeeSlice from "../Slice/employeeX";
+import employeeX from "../Slice/employeeX";
 import { configureStore } from "@reduxjs/toolkit";
 
 /**
@@ -7,7 +7,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
   reducer: {
-    employee: employeeSlice,
+    employee: employeeX,
   },
 });
 export default store;

@@ -10,16 +10,15 @@ import "./Form.css";
 
 import Dropdown from "./Dropdown/Dropdowns";
 import Input from "./Input/Input";
-// import { Modal } from "React-modal-Getssone";
-import Modal from "./../Modal/modal";
+import { Modal } from "package-modal-p14-v2";
+//import Modal from "./../Modal/modal";
 
 const Form = () => {
-
   /**
-   * 
-   * Extraction des useSelector remplace : 
-   * //const firstNameToAdd = useSelector.state.firstName, 
-   * //const lastNameToAdd = useSelector.state.lastName
+   *
+   * Extraction des useSelector remplace :
+   * //const firstNameToAdd = useSelector((state)=> state.employee.add.firstName,
+   * //const lastNameToAdd = useSelector((state)=> state.employee.add.lastName
    * // les const "xxxtoAdd" permettent d'enregistré les valeurs une fois validé
    */
 
@@ -51,22 +50,17 @@ const Form = () => {
   const [startDate, setStartDate] = useState(startDateToAdd);
   const [street, setStreet] = useState(streetToAdd);
   const [city, setCity] = useState(cityToAdd);
-  const [State, setState] = useState(StateToAdd);
+  const [State, setState] = useState("/");
   const [zipCode, setZipCode] = useState(zipCodeToAdd);
-  const [department, setDepartment] = useState(departmentToAdd);
+  const [department, setDepartment] = useState("/");
 
   const [valueBirthDate, setValueBirthDate] = useState(null);
   const [valueStartDate, setValueStartDate] = useState(null);
 
   const dispatch = useDispatch();
 
-  
   const [openModal, setOpenModal] = useState(true);
   const onOpenModal = () => setOpenModal(true);
-  const onCloseModal = () => setOpenModal(false);
-
-
- 
 
   const modaldate = (date) => {
     // "month" commence par un index "0" donc ajouté +1 pour obtenir notre mois
@@ -166,7 +160,7 @@ const Form = () => {
             labelTitle="State:"
             name="state"
             className="state"
-            value={State}
+            value={StateToAdd}
             setDrop={setState}
             datas={dataStates}
             required
@@ -196,8 +190,10 @@ const Form = () => {
       </form>
       {openModal && (
         <Modal
-          texte="Employee Created! It's Me Luigi 😉✅"
-          onClick={onCloseModal}></Modal>
+          // texte="Employee Created! It s Me" {+ ${firstNameToAdd} +} "😉✅"
+          texte="Employee Created! It s Me Luigi😉✅"
+          close="lol"
+        />
       )}
     </>
   );

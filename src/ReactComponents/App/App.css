@@ -17,3 +17,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+#deluminate_backdrop{
+width: 500px;
+height: 500px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    z-index: -2147483647;
+    background: none 0% 0% / auto repeat scroll padding-box border-box white;
+}

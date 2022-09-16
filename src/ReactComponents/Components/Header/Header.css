@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   justify-content: center;
@@ -6,12 +7,13 @@
 .header h1 {
   margin: -2rem 1rem 2rem;
 }
-
-a :hover{
-  animation: myAnim 0.6s ease-in-out 0s 2 alternate-reverse forwards;
-
+.logo {
+  width: 300px;
+  height: 276px;
 }
-
+a :hover {
+  animation: myAnim 0.6s ease-in-out 0s 2 alternate-reverse forwards;
+}
 
 @media (max-width: 575px) {
   .header {
@@ -24,11 +26,11 @@ a :hover{
   }
 }
 @keyframes myAnim {
-	0% {
-		transform: scale(0.75);
-	}
+  0% {
+    transform: scale(0.75);
+  }
 
-	100% {
-		transform: scale(1);
-	}
+  100% {
+    transform: scale(1);
+  }
 }

@@ -13,7 +13,8 @@
   color: black;
 }
 .footer-logo {
-  height: 14vh;
+  height: 103px;
+  width: 120px;
   margin: 0;
   -webkit-filter: brightness(150%) contrast(130%);
   filter: brightness(150%);
@@ -24,8 +25,5 @@
     width: 100%;
     height: 10rem;
     margin-top: auto;
-  }
-  .footer-logo {
-    height: 8vh;
   }
 }

@@ -1,54 +1,82 @@
-/* ModalContainer  */
-styled.div
-{  width: 100%;
+.ModalContainer {
+  width: 100%;
   height: 100vh;
   margin: 0;
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
   left: 0;
-  background-color: paleturquoise;
+  background-color: rgba(51, 58, 58, 0.863);
   padding-bottom: 20rem;
 }
 
 /* ModalMessage */
 
-styled.div
- {width: 25rem;
+.ModalMessage {
+  width: 30%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: auto;
-  position: -webkit-sticky;
+  padding: 2%;
   position: sticky;
   top: 40%;
-  background-color: red;
-  border: 1rem ridge yellow;
+  background-color: #1c5e3b;
+  border: 1rem solid tan;
   border-radius: 2rem;
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
-  padding: 1rem 2rem;}
-
-styled.div :hover {
-    color: grey;
-    background-color: green;
+  padding: 1rem 2rem;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+.ModalMessage p {
+  padding: 0% 10% 0% 0%;
 }
 
 /* ModalButton*/
 
-styled.button {
-  width: 3rem;
-  height: 3rem;
-  background-color: greenyellow;
-  border: 0.5rem ridge blueviolet;
-  border-radius: 2rem;
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
+.ModalButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.ModalButton :hover {
+  color: goldenrod;
+  background-color: rgb(255, 255, 255);
+}
+.ModalButton button {
+  position: absolute;
+  display: flex;
+  background-color: #1c5e3b;
+  color: white;
+  border: none;
+  border-left: tan solid;
+  height: 110%;
+  min-width: -webkit-fill-available;
+  padding: 10%;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: ease-in-out background-color 1s;
 }
+@media screen and(max-width: 900px) {
   
-styled.div :hover {
-    color: goldenrod;
-    background-color: pink;
+  .ModalMessage {
+    justify-content: center;
+  }
+
+  .ModalMessage {
+    justify-content: space-evenly;
+  }
+
+  .ModalButton button {
+    padding: 0.5rem;
+  }
 }
-;

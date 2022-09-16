@@ -168,6 +168,7 @@ table td:nth-child(4) {
   justify-content: space-between;
 }
 .table-footer-p {
+  color: whitesmoke;
   margin-left: 3rem;
   font-weight: bold;
 }
