@@ -1,8 +1,19 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {useCallback } from "react";
+import { useCallback } from "react";
 
 import "../Form.css";
+
+/** FormDatePicker for Form
+ * @function
+ * @name FormDatePicker
+ * @param {number} selected - input value
+ * @param {date} setDate - new input value
+ * @param {function} setValueDate - read value
+ * @param {string} placeholder - text in the input
+ * @param {string} labelTitle - text above the input
+ * @return {HTML} the modal FormDatePicker
+ */
 
 export default function FormDatePicker({
   selected,
@@ -12,7 +23,7 @@ export default function FormDatePicker({
   labelTitle,
 }) {
   const onClickLabel = useCallback((event) => {
-      event.preventDefault();
+    event.preventDefault();
   }, []);
 
   return (
@@ -34,8 +45,7 @@ export default function FormDatePicker({
         peekNextMonth
         showMonthDropdown
         useShortMonthInDropdown
-        showYearDropdown
-        >
+        showYearDropdown>
         <div className="forget"> Don't forget YOU are the Best! 😉</div>
       </DatePicker>
     </label>

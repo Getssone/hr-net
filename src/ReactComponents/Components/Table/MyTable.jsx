@@ -10,6 +10,16 @@ import Table from "./Table";
 import TableFooter from "./TableFooter";
 import Pagination from "./Pagination";
 
+
+/**
+ * MyTable for Form
+ * @function
+ * @name MyTable
+ * @param {data} labels - data table of labels
+ * @param {Object} data - Json converted to object
+ * @return {HTML} the Table page
+ */
+
 export default function MyTable({ labels, data }) {
   const initialState = data;
 
@@ -38,6 +48,7 @@ export default function MyTable({ labels, data }) {
     currentPage * rowPerPage < sortedData.length
       ? currentPage * rowPerPage
       : sortedData.length;
+
 
   //fix le nombre de ligne de disponible
   //  set the number of lines to display

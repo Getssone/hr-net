@@ -4,6 +4,12 @@ import Form from "../../ReactComponents/Components/Form/Form.jsx";
 import "./Home.css";
 import "../../ReactComponents/Components/Boutton/boutton.css";
 
+/**
+ * Represents Home.
+ * @constructor
+ * @return {HTML} the Home page with the form
+ */
+
 export default function Home() {
   return (
     <>

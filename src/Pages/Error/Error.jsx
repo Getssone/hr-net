@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import "./Error.css";
 import "../../ReactComponents/Components/Boutton/boutton.css"
 
-export default function EmployeesBis() {
+/**
+ * Represents Error.
+ * @constructor
+ * @return {HTML} the Error page with Link to other functional page
+ */
+
+export default function Error() {
   return (
     <div>
       <div className="employees">

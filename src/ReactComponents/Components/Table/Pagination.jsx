@@ -3,6 +3,16 @@ import PropTypes from "prop-types";
 
 import { generateID } from "../../../utils/utils";
 
+/** Pagination for Form
+ * @function
+ * @name Pagination
+ * @param {number} currentPage - current page number 
+ * @param {number} totalEntries - total number of pages
+ * @param {number} displayedEntries - number of lines available
+ * @param {function} handleClick - event of click
+ * @return {HTML} the modal Pagination
+ */
+
 export default function Pagination({
   currentPage,
   totalEntries,
@@ -37,12 +47,12 @@ export default function Pagination({
       {nbPagesArray.map((elt, index) => (
         <button
           type="button"
-          name= {elt}
+          name={elt}
           key={generateID()}
           //récupère la page actuel"currentpage"et ajoute index +1 pour passer au suivant
-          onClick={() => handleClick(index+1 )}
+          onClick={() => handleClick(index + 1)}
           className={
-            currentPage === index+1 ? "number number-active" : "number"
+            currentPage === index + 1 ? "number number-active" : "number"
           }>
           {index + 1}
         </button>

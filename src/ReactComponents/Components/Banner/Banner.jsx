@@ -1,4 +1,9 @@
 import "./Banner.css";
+/** Banner
+ * @function
+ * @name Banner
+ * @return {HTML} the Banner page
+ */
 
 export default function Banner() {
   return (

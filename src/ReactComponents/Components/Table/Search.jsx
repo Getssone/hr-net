@@ -3,8 +3,17 @@ import PropTypes from "prop-types";
 
 import { normalizeText } from "../../../utils/utils";
 
-// Search in every entries
+/** Search for Form
+ * @function
+ * @name Dropdown
+ * @param {array} sortedData - filtered data 
+ * @param {function} handleDisplayedData - manipulate the data displayed
+ * @param {function} searchingState - check searching state
+ * @param {array} resetSearching - get initial data
+ * @return {HTML} the modal Search
+ */
 
+// Search in every entries
 export default function Search({ sortedData, handleDisplayedData, searchingState, resetSearching }) {
   //manipuler(récupérer) les élements rechercher
   const handleSearch = (evt) => {

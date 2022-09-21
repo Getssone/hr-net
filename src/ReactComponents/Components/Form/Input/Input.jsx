@@ -3,15 +3,13 @@ import PropTypes from "prop-types";
  * Input for Form
  * @function
  * @name Input
- * @param {string} type
- * @param {string} name,
- * @param {string} className,
- * @param {string} labelTitle,
- * @param {string} value,
- * @param {function} setInput // (enregistre "value" ) 
-  
- }}
- * @returns {object}
+ * @param {string} type indicates the type of the input
+ * @param {string} name input name in the html label
+ * @param {string} className input className in the html select
+ * @param {string} labelTitle text above the input 
+ * @param {string|number} value  input value
+ * @param {function} setInput new input value
+ * @returns {HTML} the modal Input
  */
 
 export default function Input({

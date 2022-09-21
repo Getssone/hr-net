@@ -3,6 +3,15 @@ import PropTypes from "prop-types";
 
 // choose number of rows to display
 
+/**
+ * Entries for Form
+ * @function
+ * @name Entries
+ * @param {number} value  input value
+ * @param {function} handleChange new input value
+ * @returns {HTML} the modal Input
+ */
+
 export default function Entries({ value, handleChange }) {
   return (
     <>

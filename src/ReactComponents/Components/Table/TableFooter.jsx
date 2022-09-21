@@ -1,6 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/** TableFooter for Form
+ * @function
+ * @name Table
+ * @param {number} maxRows - maximum row
+ * @param {number}  totalEntries filtered data
+ * @param {number} maxFilteredShow - max data filtred and showed
+ * @param {number} totalEntriesShow - number entries Show
+ * @param {boolean} isSearching - check if there is a search
+ * @return {HTML} the modal TableFooter
+ */
 export default function TableFooter({
   maxRows,
   totalEntries,

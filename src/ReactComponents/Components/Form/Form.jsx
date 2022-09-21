@@ -10,8 +10,22 @@ import "./Form.css";
 
 import Dropdown from "./Dropdown/Dropdowns";
 import Input from "./Input/Input";
-import { Modal } from "package-modal-p14-v2";
+/**
+ * Si vous souhaitez utiliser la modale interne, commenté la ligne ci-dessous
+ * 
+ * puis dé-commenté l'autre ligne
+ */
+
+import { Modal } from "package-modal";
+
 //import Modal from "./../Modal/modal";
+
+/**
+ * Input for Form
+ * @function
+ * @name Form
+ * @returns {HTML} the composant Form
+ */
 
 const Form = () => {
   /**
@@ -40,7 +54,7 @@ const Form = () => {
     state.birthDate,
     state.street,
     state.city,
-    state.state,
+    state.State,
     state.zipCode,
   ]);
   // const [ valeur initial, valeur modifié] = useState( utilise le selecteur "XXX")
@@ -59,7 +73,7 @@ const Form = () => {
 
   const dispatch = useDispatch();
 
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const onOpenModal = () => setOpenModal(true);
 
   const modaldate = (date) => {
@@ -192,7 +206,7 @@ const Form = () => {
         <Modal
           // texte="Employee Created! It s Me" {+ ${firstNameToAdd} +} "😉✅"
           texte="Employee Created! It s Me Luigi😉✅"
-          close="lol"
+          close="X"
         />
       )}
     </>

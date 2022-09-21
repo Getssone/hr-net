@@ -1,6 +1,12 @@
 import "./Footer.css";
 import logo from "../../../assets/FooterWealthHealth.png";
 
+/** Footer
+ * @function
+ * @name Footer
+ * @return {HTML} the Footer page 
+ */
+
 export default function Footer() {
   return (
     <footer className="footer">

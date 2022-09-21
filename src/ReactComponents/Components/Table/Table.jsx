@@ -3,6 +3,18 @@ import PropTypes from "prop-types";
 
 import { generateID } from "../../../utils/utils";
 
+/** Table for Form
+ * @function
+ * @name Table
+ * @param {array}  labels filtered data 
+ * @param {number} minRows - minimum row
+ * @param {number} maxRows - maximum row
+ * @param {object} sort - data sorting
+ * @param {array} sortedData - get data sorted
+ * @param {function} handleSort - manipulate the Sort
+ * @return {HTML} the modal Table
+ */
+
 export default function Table({
   labels,
   minRows,

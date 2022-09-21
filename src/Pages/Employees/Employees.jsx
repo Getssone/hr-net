@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import MyTable from "../../ReactComponents/Components/Table/MyTable";
 import labels from "../../data/fakeLabels";
 import "./Employees.css";
+/**
+ * Represents Employees.
+ * @constructor
+ * @return {HTML} the Employees page with the table
+ */
 
 export default function Employees() {
   const employees = JSON.parse(localStorage.getItem("employees"));
